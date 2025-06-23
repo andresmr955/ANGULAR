@@ -1,0 +1,41 @@
+html {
+  font-size: 62.5%;
+}
+
+.container{
+    width: 550px;
+    padding: 3rem;
+    margin: 10px auto;
+    background-color: #f0f0f0;
+}
+
+button {
+  
+  background-color: #4CAF50;  /* Color verde */
+ 
+  color: white;  /* Texto blanco */
+  
+  /* 3. Borders */
+  border: none;  /* No border */
+  border-radius: 5px;  
+  padding: 10px 20px;  
+  font-size: 16px;  
+  font-weight: bold;  
+  cursor: pointer;  
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  
+  transition: background-color 0.3s, transform 0.3s; 
+  margin: 15px; 
+}
+
+.title{
+  color: red;
+  font-weight: bold;
+  font-size: 1.9rem;
+}
+.sub-title{
+  color: rgb(59, 170, 214);
+}
+
+.string-interpolation{
+  color: blue;
+}

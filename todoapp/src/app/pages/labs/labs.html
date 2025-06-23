@@ -1,0 +1,89 @@
+<div class="container">
+    <p>labs works!</p>
+    <h1>My first project</h1>
+    <!-- String interpolation -->
+    <h2 class="title"><strong>String interpolation</strong></h2>
+    <h4 class="string-interpolation">{{title}}</h4>
+    <ul>
+        
+        <li  class="string-interpolation" *ngFor="let task of tasks">
+            {{ task }}
+        </li> 
+    </ul>
+    <hr>
+    <nav>
+        <a routerLink="">Home</a> |
+        <a routerLink="profile">Profile</a>
+    </nav>
+    <p>Hello my name is <span class="string-interpolation">{{name}}</span> and my age is <span class="string-interpolation">{{age}}</span></p>
+    <!-- Expression Interpolation -->
+    <h2 class="title"><strong>Expression Interpolation</strong></h2>
+    <p>'hello'.repeat(3)</p>
+    <p>{{'hello'.repeat(3)}}</p>
+    <hr>
+    <!-- Direct operations -->
+    <h2 class="title"><strong>Direct operations</strong></h2>
+    
+    <p>Addition of 3 + 3 = <span class="string-interpolation">{{ 3 + 3 }}</span></p>
+ 
+
+    <hr>
+    <!-- Property binding -->
+    <h2 class="title"><strong>Property binding with [property] = value in ts</strong></h2>
+
+    <input type="text" [placeholder]="nameinput">
+    <br>
+    <br>
+    <img [src]="avatar2" alt="">
+    <br>
+    
+    <button 
+        [ngClass]="disable ?  'btn-disabled': 'btn-enabled'" 
+        [disabled]="disable" 
+        (click)="clickHandler()">
+        Click me
+    </button>
+
+    <button (click)="toggleDisable()">Activate / Deactivate</button>
+    <hr>
+
+    <!--Working with objects-->
+    <h2 class="title"><strong>Working with objects</strong></h2>
+
+    <p>person: <span class="string-interpolation">{{ person.name }}</span></p>
+    <img [src]="person.avatar" alt="">
+    <hr>
+    <!--Working with events-->
+    <h2 class="title"><strong>Working with events</strong></h2>
+    <h3 class="sub-title">Event binding with (property sintax angular)= "value in ts"</h3>
+
+    <button (click)="clickHandler()">Click me again</button>
+    <hr>
+    <button (dblclick)="clickHandler()">Click double me again</button>
+    <h3 class="sub-title">Event binding with (change property)= "value in ts"</h3>
+    <br>
+    <br>
+    <input type="number"[value]="person.age" (change)="changeHandler($event)">
+    <span> ✅ Podría disparar change si haces clic en las flechas y el valor cambia.</span>
+    <br>
+    <br>
+    <input type="text"[value]="person.age" (change)="changeHandler($event)">
+    <span>✅ Cuando terminas de editar y sales del input</span>
+    <br>
+    <br>
+    <input type="text" [value]="person.name" (keydown)="keydownHandler($event)">
+    <span> ✅Cada vez que presionas una tecla dentro del input</span>
+    <br>
+    <br>
+    <input type="text" [value]="person.name" (keydown.control.c)="clickHandler()">
+    <span> ✅Cada vez que presionas ctrl + c</span>
+    <hr>
+    <h2 class="title"><strong>Signals</strong></h2>
+    <p>Hello my name with signal is <span class="string-interpolation">{{namesignal()}}</span> and my age is <span class="string-interpolation">{{agesignal()}}</span></p>
+
+    <input type="text" [value]="namesignal()" (change)="changeHandlerSignal($event)">
+
+    <p>Hello my name with signal is <span class="string-interpolation">{{namesignal()}}</span> and my age is <span class="string-interpolation">{{agesignal()}}</span></p>
+    <p>Hello my name with signal is <span class="string-interpolation">{{namesignal()}}</span> and my age is <span class="string-interpolation">{{agesignal()}}</span></p>
+
+</div>

@@ -11,7 +11,7 @@ html {
 
 button {
   
-  background-color: #4CAF50;  /* Color verde */
+  background-color: #20c40a;  /* Color verde */
  
   color: white;  /* Texto blanco */
   
@@ -27,6 +27,11 @@ button {
   margin: 15px; 
 }
 
+button.destroy::after {
+  content: "🚫";
+  color: red;
+ 
+}
 .title{
   color: red;
   font-weight: bold;

@@ -2,5 +2,35 @@
     <p>labs works!</p>
     <h1>Control Structure</h1>
     <!-- String interpolation -->
-   
-</div>
+    <h4>List <strong>ngFor</strong></h4>
+    <ul>
+        <li *ngFor=" let task of tasks1(); index as i">
+          {{i}}  {{ task }}
+        </li>
+    </ul>
+    <div class="container">
+      <h1>My Day</h1>
+      <p>All my tasks in one place</p>
+      <input
+        class="new-todo"
+        placeholder="Type new todo"
+        autofocus
+        type="text"
+        (change)="changeHandler($event)"
+      />
+    </div>
+    
+  
+    <!-- This section should be hidden by default and shown when there are todos -->
+    
+    <ul class="todo-list">
+        <li *ngFor="let task of tasks(); index as i">
+        
+          <div class="view">
+            <input class="toggle" type="checkbox" checked />
+            <label>{{task}}</label>
+            <button class="destroy" (click)="deleteTask(i)"></button>
+          </div>
+          <input class="edit" value="Learn JavaScript" />
+        </li>
+    </ul>

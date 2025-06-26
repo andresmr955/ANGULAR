@@ -139,4 +139,21 @@
       <p *ngSwitchCase="'Juan'">I am Juan</p>
       <p *ngSwitchCase="'Camilo'">I am Camilo</p>
    </div>
+   <h4>Ng Model switch</h4>
+   <h2>Escribe tu nombre:</h2>
+
+  <!-- Input reactivo -->
+  <input [(ngModel)]="nombremodel" placeholder="Escribe un nombre..." />
+
+  <!-- Contenido dinámico con ngSwitch -->
+  <div [ngSwitch]="nombremodel.toLowerCase()">
+    <p *ngSwitchCase="'ana'">¡Hola Ana! Bienvenida de nuevo.</p>
+    <p *ngSwitchCase="'juan'">¡Hola Juan! Qué gusto verte.</p>
+    <p *ngSwitchDefault>Usuario no reconocido.</p>
+  </div>
+   <hr>
+   <h4 class="title">Manejo Avanzado de Formularios Reactivos en Angular</h4>
+   <input type="color" [formControl]="colorCtrl">
+   <p>Color: {{ colorCtrl.value }}</p>
+
 </div>

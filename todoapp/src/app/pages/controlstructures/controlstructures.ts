@@ -1,10 +1,13 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { Task } from './../../models/task.model';
+import { FormsModule, ReactiveFormsModule, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-controlstructures',
-  imports: [ CommonModule ],
+  standalone: true,
+  imports: [ CommonModule, FormsModule, ReactiveFormsModule,],
   templateUrl: './controlstructures.html',
   styleUrl: './controlstructures.css'
 })
@@ -114,5 +117,12 @@ export class Controlstructures {
       }
     })
 
+  }
+
+  nombremodel: string = '';
+
+  colorCtrl = new FormControl()
+  constructor(){
+    this.colorCtrl.valueChanges.subscribe(value => console.log(value));
   }
 }

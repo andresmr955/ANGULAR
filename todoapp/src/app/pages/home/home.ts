@@ -44,4 +44,9 @@ export class Home {
   deleteTask(index: number){
     this.tasks.update((tasks) => tasks.filter((task, position) => position !== index ));
   }
+
+  onToggleComplete(task: Task){
+    task.completed = !task.completed
+    console.log(task.completed)
+  }
 }

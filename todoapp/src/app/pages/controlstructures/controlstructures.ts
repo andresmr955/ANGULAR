@@ -27,7 +27,7 @@ export class Controlstructures {
     ]
   );
 
-   taskInterface = signal<Task[]> ([
+   tasksInterface = signal<Task[]> ([
     {
       id: Date.now(),
       title: "Create project",
@@ -64,10 +64,55 @@ export class Controlstructures {
         title, 
         completed: false,
       };
-      this.taskInterface.update((taskInterface) => [...taskInterface, newTask]);
+      this.tasksInterface.update((tasksInterface) => [...tasksInterface, newTask]);
     }
 
     deleteTaskInter(index: number){
-      this.taskInterface.update((taskInterface) => taskInterface.filter((task, position) => position !== index ));
+      this.tasksInterface.update((tasksInterface) => tasksInterface.filter((task, position) => position !== index ));
     }
+
+    updateTask(index: number){
+      this.tasksInterface.update((tasksInterface) => {
+        return tasksInterface.map((task, position) => {
+          if(position === index) {
+            return {
+              ...task,
+              completed: !task.completed
+            }
+          }
+          return task;
+        })
+      })
+    }
+
+    valor = 4
+    name = signal<string> ("Melodie")
+    person = signal({
+      name:  "Andres",
+      age: 6,
+      avatar: 'https://www.w3schools.com/howto/img_avatar.png',
+  })
+  changeAge(event:Event){
+    const input = event.target as HTMLInputElement;
+    const newValue = input.value;
+    this.person.update(prevState => {
+      return {
+        ...prevState, 
+        age: parseInt(newValue, 10)
+      }
+    })
+
+  }
+
+  changeName(event:Event){
+    const input = event.target as HTMLInputElement;
+    const newValue = input.value;
+    this.person.update(prevState => {
+      return {
+        ...prevState, 
+        name: newValue
+      }
+    })
+
+  }
 }

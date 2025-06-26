@@ -11,6 +11,7 @@
     
     <h1>My Day</h1>
     <p>All my tasks in one place</p>
+     
     <h4 class="title">List <strong>ngFor with change event</strong></h4>
     <input
     class="new-todo"
@@ -23,6 +24,7 @@
     
   
     <!-- This section should be hidden by default and shown when there are todos -->
+      <hr>
     <h4 class="title" >List <strong>ngFor with index and click</strong></h4>
     <ul class="todo-list">
         <li *ngFor="let task of tasks(); index as i">
@@ -35,7 +37,7 @@
           
         </li>
     </ul>
-
+     <hr>
     <h4 class="title" >Estructuración de Tareas en JavaScript: Uso de  <strong>Interfaces y Typing</strong></h4>
     <p>Creamos una carpeta al nivel de los componentes, y esta carpeta se llamara models, ahi inplementaremos los moldes de nuestras estructuras de datos.</p>
     
@@ -73,7 +75,7 @@
     (change)="changeHandlerInter($event)"
     />
     <ul class="todo-list">
-        <li *ngFor="let task of taskInterface(); index as i">
+        <li *ngFor="let task of tasksInterface(); index as i">
         
           <div class="view">
             <input class="toggle" type="checkbox" checked />
@@ -84,5 +86,57 @@
     </ul>
 
     <p>Despues se puede crear el metodo de agregar elementos o eliminar elementos de la lista</p>
+     <hr>
+     <h4 class="title" >Actualizacion de tareas con Angular y programacion mutable</h4>
+
+    <pre>
+        <code>
+            {{tasksInterface() | json}}
+        </code>
+    </pre>
+     <ul class="todo-list">
+        <li *ngFor="let task of tasksInterface(); index as i">
+        
+          <div class="view">
+            <input class="toggle" type="checkbox" [checked]="task.completed" (change)="updateTask(i)" />
+            <label>{{task.title}}</label>
+            <button class="destroy" (click)="deleteTaskInter(i)"></button>
+          </div>
+        </li>
+    </ul>
+    <span class="todo-count"><strong>{{tasksInterface().length}}</strong> items left</span>
+ <hr>
+    <h4 class="title">Uso de ngIF</h4>
+
+    <div *ngIf="valor !== 1">
+      My content {{name()}}
+    </div>
+
+    <p>With an object</p>
+    <input type="number" [value]="person().age" (change)="changeAge($event)">
     
+    <div *ngIf="person().name === 'Andres' && person().age > 18 else noMayorEdad">
+      <p>I am {{ person().name }}</p>
+
+    </div>
+    <ng-template #noMayorEdad>
+      <p>I am {{person().age}}, you are illegal</p>
+    </ng-template>
+    <div *ngIf="tasks().length > 0; else noTask" >
+      <p>Total tasks: {{ tasks().length }}</p>
+      <p *ngFor="let task of tasks(); index as i"> 
+      <button class="destroy" (click)="deleteTask(i)"></button></p>
+    </div>
+    <ng-template #noTask>
+      <p>No hay tareas</p>
+    </ng-template>
+    <hr>
+   <h4 class="title">Pluralización y ngSwitch en Angular para manejo de condiciones múltiples</h4>
+   <input type="text" [value]="person().name" (change)="changeName($event)">
+   <div [ngSwitch]="person().name">
+      <p *ngSwitchCase="'Nicolas'">I am Nicolas</p>
+      <p *ngSwitchCase="'Andres'">I am Andres</p>
+      <p *ngSwitchCase="'Juan'">I am Juan</p>
+      <p *ngSwitchCase="'Camilo'">I am Camilo</p>
+   </div>
 </div>

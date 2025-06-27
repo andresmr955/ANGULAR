@@ -124,7 +124,7 @@ export class Controlstructures {
     colorCtrl = new FormControl()
     constructor(){
         this.colorCtrl.valueChanges.subscribe(value => console.log(value));
-      this.correoCtrl.valueChanges.subscribe(valor => {
+        this.correoCtrl.valueChanges.subscribe(valor => {
           console.log('📩 Nuevo valor:', valor);
         });
     }

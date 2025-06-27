@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { Home } from './pages/home/home';
 import { Labs } from './pages/labs/labs';
 import { Controlstructures } from './pages/controlstructures/controlstructures';
+import { Gettingreadyapp } from './pages/gettingreadyapp/gettingreadyapp'
 
 export const routes: Routes = [
     {
@@ -16,5 +17,9 @@ export const routes: Routes = [
     {
         path: 'constru', 
         component: Controlstructures
+    },
+    {
+        path: 'gettingready', 
+        component: Gettingreadyapp
     }
 ];

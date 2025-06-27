@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormControl, Validators, FormArray} from '@angular/forms';
 
@@ -25,8 +25,18 @@ export class Home {
     }
   ]);
 
-
- 
+    filter = signal<'all' | 'pending' | 'completed'>('all')
+    tasksByFilter = computed(() => {
+      const filter = this.filter();
+      const tasks = this.tasks();
+      if (filter === 'pending') {
+        return tasks.filter(task => !task.completed);
+      }
+      if (filter === 'completed') {
+        return tasks.filter(task => task.completed);
+      }
+      return tasks;
+    })
   
   changeHandler(event: Event){
       const input = event.target as HTMLInputElement;
@@ -107,6 +117,10 @@ export class Home {
         return task
       })
     });
+  }
+
+  changeFilter(filter: 'all' | 'pending' | 'completed') {
+    this.filter.set(filter);
   }
 
 }

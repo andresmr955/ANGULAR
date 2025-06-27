@@ -75,7 +75,5 @@ export class Home {
     validators: Validators.requiredTrue,
   });
 
-  form: FormArray<FormControl<boolean>> = new FormArray
-  (this.tasks().map(task => new FormControl(task.completed, { nonNullable: true})));
 
 }

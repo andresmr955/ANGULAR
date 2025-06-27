@@ -21,5 +21,21 @@
         <input type="text" [formControl]="nameCtrl"><br />
         <span class="message-error" [class.any]="nameCtrl.invalid && nameCtrl.touched">Nombre invalido</span>
    </div>
+   <hr>
+    <h4 class="title" >Edición de Tareas Dinámicas en Aplicaciones Web</h4>
+    <li *ngFor="let task of tasks(); index as i" [class.completed]="task.completed">
+
+        <div class="view"  [class.any]="form.at(i).value">
+                <input class="toggle" 
+                    [formControl]="form.at(i)"
+                    type="checkbox" 
+                    [checked]="task.completed" 
+                    (change)="onToggleComplete(task)"
+                    />
+                <label>{{task.title}}</label>
+               
+            </div>
+    </li>
+    <div class="line-separator"></div>
 
 </div>

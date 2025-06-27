@@ -73,3 +73,20 @@ button.destroy::after {
 .message-error.any{
   opacity: 1;
 }
+
+.completed {
+  color: #949494;
+  text-decoration: line-through;
+}
+
+.view.any{
+  background-color: rgba(13, 202, 60, 0.473);
+  margin: 2px;
+  border-radius: 15px;
+}
+
+.line-separator {
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 16px 0;
+}

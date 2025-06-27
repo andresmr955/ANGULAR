@@ -355,11 +355,7 @@ html .clear-completed:active {
   }
 }
 
-.view.any{
-  background-color: rgba(13, 202, 60, 0.473);
-  margin: 2px;
-  border-radius: 15px;
-}
+
 
 @media (max-width: 430px) {
   .footer {

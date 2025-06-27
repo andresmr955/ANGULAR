@@ -44,3 +44,38 @@ button.destroy::after {
 .string-interpolation{
   color: blue;
 }
+
+
+.input {
+  padding: 8px;
+  border: 2px solid gray;
+  border-radius: 5px;
+  outline: none;
+  margin-bottom: 5px;
+}
+
+/* Angular aplica estas clases automáticamente */
+.ng-valid {
+  border-color: green;
+}
+
+.ng-invalid.ng-touched {
+  border-color: red;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+.estado {
+  margin-top: 10px;
+  font-family: monospace;
+}
+
+.box{
+  height: 15px;
+  display: block;
+  background-color: green;
+  
+}

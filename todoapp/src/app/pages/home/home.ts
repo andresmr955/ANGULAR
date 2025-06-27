@@ -1,9 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule, FormControl, Validators } from '@angular/forms';
+
 import { Task } from './../../models/task.model';
+
 @Component({
   selector: 'app-home',
-  imports: [CommonModule],
+  imports: [ CommonModule, FormsModule, ReactiveFormsModule,],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
@@ -48,5 +51,22 @@ export class Home {
   onToggleComplete(task: Task){
     task.completed = !task.completed
     console.log(task.completed)
+  }
+
+  newTaskCtrl = new FormControl(
+    '', {
+      nonNullable: true,
+      validators: [
+        Validators.required,
+        Validators.pattern('^\\S.*$'),
+      ]
+    }
+  )
+  changehandlervalidation(){
+    if(this.newTaskCtrl.valid){
+      const value = this.newTaskCtrl.value;
+      this.addTask(value);
+      this.newTaskCtrl.setValue('')
+    }
   }
 }

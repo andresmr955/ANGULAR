@@ -155,5 +155,54 @@
    <h4 class="title">Manejo Avanzado de Formularios Reactivos en Angular</h4>
    <input type="color" [formControl]="colorCtrl">
    <p>Color: {{ colorCtrl.value }}</p>
+    <hr>
+   <h4 class="title">Validaciones de Inputs en Formularios Reactivos con Angular</h4> 
+    <input
+        class="new-todo"
+        placeholder="Type new todo"
+        autofocus
+        type="text"
+        [formControl]="newTaskCtrl"
+        (keydown.enter)="changehandlervalidation()"
+      />
 
+      <ul *ngFor="let task of tasksValidation(); index as i">
+        <li>{{task.title}}</li>
+      </ul>
+    <hr>
+   <h4 class="title">Forms Control</h4> 
+   <h2>Formulario Reactivo con FormControl</h2>
+
+<input 
+  type="email"
+  [formControl]="correoCtrl"
+  placeholder="Ingresa tu correo"
+  class="input" />
+
+<!-- Mostrar mensaje de error -->
+<p *ngIf="correoCtrl.invalid && correoCtrl.touched" class="error">
+  ❌ Correo no válido
+</p>
+
+<!-- Mostrar estado del control -->
+<div class="estado">
+  <p>Valid: {{ correoCtrl.valid }}</p>
+  <p>Touched: {{ correoCtrl.touched }}</p>
+  <p>Value: {{ correoCtrl.value }}</p>
+  <p>Dirty: {{ correoCtrl.dirty }}</p>
+  <p>Invalid: {{ correoCtrl.invalid }}</p>
+  <p>Disabled: {{ correoCtrl.disabled }}</p>
+</div>
+<hr>
+   <h4 class="title">Validación de formularios y estilos dinámicos en Angular</h4> 
+   <input type="color" [formControl]="colorCtrl">
+   <p>Color: {{colorCtrl.value}}</p>
+   <svg>
+      <g stroke="black">
+        <rect  x="0" y="0" height="100" width="100" [attr.fill]="colorCtrl.value" />
+      </g>
+   </svg>
+   <br>
+   <input type="number" [formControl]="widthCrl">
+   <span class="box" [style.width.px]="widthCrl.value"></span>
 </div>

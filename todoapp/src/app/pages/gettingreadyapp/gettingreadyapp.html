@@ -37,5 +37,46 @@
             </div>
     </li>
     <div class="line-separator"></div>
+    <h4>Normal class dinamic</h4>
+    <!-- <li 
+             *ngFor="let task of tasks(); index as i"
+              [class.completed]="task.completed"
+              class="editing">
+              
+          <div class="view"  >
+            <input class="toggle" 
+                   
+                   type="checkbox" 
+                   [checked]="task.completed" 
+                   (change)="onToggleComplete(task)"
+                   />
+            <label>{{task.title}}</label>
+          </div>
+          <input class="edit" 
+                [value]="task.title"
+            
+                />
+        </li> -->
 
+        <!-- Es lo mismo del comentado pero con el editing dinamico -->
+    <li  (dblclick)="updateTaskEditingMode(i)" 
+             *ngFor="let task of tasks(); index as i"
+              [class.completed]="task.completed"
+              [class.editing]="task.editing">
+              
+          <div class="view"  >
+            <input class="toggle" 
+                   
+                   type="checkbox" 
+                   [checked]="task.completed" 
+                   (change)="onToggleComplete(task)"
+                   />
+            <label>{{task.title}}</label>
+            
+          </div>
+          <input class="edit" 
+                [value]="task.title"
+                (keydown.enter)="updateTaskText(i, $event)"
+                />
+    </li>
 </div>

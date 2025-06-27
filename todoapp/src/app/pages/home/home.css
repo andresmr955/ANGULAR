@@ -338,6 +338,8 @@ html .clear-completed:active {
   text-decoration: underline;
 }
 
+
+
 /*
 	Hack to remove background from Mobile Safari.
 	Can't use it globally since it destroys checkboxes in Firefox
@@ -351,6 +353,12 @@ html .clear-completed:active {
   .todo-list li .toggle {
     height: 40px;
   }
+}
+
+.view.any{
+  background-color: rgba(13, 202, 60, 0.473);
+  margin: 2px;
+  border-radius: 15px;
 }
 
 @media (max-width: 430px) {

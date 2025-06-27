@@ -3,16 +3,23 @@
     <p style="color: red">gettingreadyapp works!</p>
     <h1> Getting ready app </h1>
     <h4 class="title">Validación de formularios y estilos dinámicos en Angular</h4> 
-   <input type="color" [formControl]="colorCtrl">
-   <p>Color: {{colorCtrl.value}}</p>
-   <svg>
-      <g stroke="black">
-        <rect  x="0" y="0" height="100" width="100" [attr.fill]="colorCtrl.value" />
-      </g>
-   </svg>
-   <br>
-   <input type="number" [formControl]="widthCrl">
-   <span class="box" [style.width.px]="widthCrl.value"></span>
+    <input type="color" [formControl]="colorCtrl">
+    <p>Color: {{colorCtrl.value}}</p>
+    <svg>
+        <g stroke="black">
+            <rect  x="0" y="0" height="100" width="100" [attr.fill]="colorCtrl.value" />
+        </g>
+    </svg>
+    <br>
+    <input type="number" [formControl]="widthCrl">
+    
+    <span class="box" [style.width.px]="widthCrl.value"></span>
     <hr>
-    <h4 class="title" >Somthing new</h4>
+    <h4 class="title" >Activación dinámica de clases en Angular con validaciones</h4>
+
+   <div>
+        <input type="text" [formControl]="nameCtrl"><br />
+        <span class="message-error" [class.any]="nameCtrl.invalid && nameCtrl.touched">Nombre invalido</span>
+   </div>
+
 </div>

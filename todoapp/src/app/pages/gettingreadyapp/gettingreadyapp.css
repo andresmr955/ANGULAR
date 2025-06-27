@@ -59,5 +59,17 @@ button.destroy::after {
   height: 15px;
   display: block;
   background-color: green;
-  
+  margin: 10px 0;
+}
+
+.message-error{
+  background-color: red;
+  color: white;
+  opacity: 0;
+  transition:  all linear .5s; 
+
+}
+
+.message-error.any{
+  opacity: 1;
 }

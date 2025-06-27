@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule, FormControl, Validators } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, FormControl, Validators, FormArray} from '@angular/forms';
 
 import { Task } from './../../models/task.model';
 
@@ -69,4 +69,13 @@ export class Home {
       this.newTaskCtrl.setValue('')
     }
   }
+
+  anyCtrl = new FormControl(false, {
+    nonNullable: true,
+    validators: Validators.requiredTrue,
+  });
+
+  form: FormArray<FormControl<boolean>> = new FormArray
+  (this.tasks().map(task => new FormControl(task.completed, { nonNullable: true})));
+
 }

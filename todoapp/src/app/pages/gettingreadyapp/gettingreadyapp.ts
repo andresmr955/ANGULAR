@@ -6,7 +6,7 @@ import { FormsModule, ReactiveFormsModule, FormControl, Validators } from '@angu
 @Component({
   selector: 'app-gettingreadyapp',
   standalone: true,
-  imports: [ CommonModule, FormsModule, ReactiveFormsModule,],
+  imports: [ CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './gettingreadyapp.html',
   styleUrl: './gettingreadyapp.css'
 })
@@ -19,6 +19,14 @@ export class Gettingreadyapp {
     
     widthCrl = new FormControl(50, {
     nonNullable: true,
-      });
+  });
 
+  nameCtrl = new FormControl('Andres', {
+    nonNullable: true,
+    validators: [ 
+      Validators.required,
+      Validators.minLength(3),
+    ]
+  });
 }
+  

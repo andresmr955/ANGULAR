@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, signal, computed, effect, inject, Injector } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormControl, Validators, FormArray} from '@angular/forms';
 
@@ -72,7 +72,27 @@ export class Home {
       ]
     }
   )
-  changehandlervalidation(){
+injector = inject(Injector)
+ 
+  
+  ngOnInit(){
+    const storage = localStorage.getItem('tasks');
+    if (storage){
+      const tasks = JSON.parse(storage);
+      this.tasks.set(tasks)
+    }
+    this.trackTask();
+  }
+
+  trackTask(){
+    effect(() => {
+      const tasks = this.tasks()
+      console.log(tasks);
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+    }, { injector: this.injector });
+  }
+
+  changeHandlerValidation(){
     if(this.newTaskCtrl.valid){
       const value = this.newTaskCtrl.value;
       this.addTask(value);

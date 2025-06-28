@@ -119,4 +119,67 @@
 
       <h4 class="title" >Persistencia</h4>
       <p> es la capacidad de la app de guardar la informacion en el local storage, usando ngOnit, effetsk, injector</p>
+
+      <h4 class="title" >Estados Computados en Programación Reactiva con Signals</h4>
+      <div *ngIf="name == 'andres'">
+          <p>The <span class="sub-title">ngiF</span> Works, with {{name}}</p>
+      </div>
+      @if(name == "andres" && age > 18){
+        <p>The <span class="sub-title">&#64;if</span> works, with {{name}} </p>
+      }@else {
+        <p><span class="sub-title">else</span> works too!</p>
+      }
+      <hr>
+      <ul>
+        <li *ngFor=" let task of tasks1(); index as i">
+          <p><span class="sub-title">ngFor works! </span></p>
+          {{i}}  {{ task }}
+        </li>
+      </ul>
+      @for(task of tasks1(); track task; let i = $index ){
+        <p><span class="sub-title">&#64;for works! </span></p>
+        <li>{{ i }} {{ task }}</li>
+      }@empty {
+        <li><strong> <span class="sub-title">&#64;Empty</span> list</strong></li>
+      }
+      <hr>
+      <input type="text" [value]="person().name" (change)="changeName($event)">
+      <div [ngSwitch]="person().name">
+        
+        <p *ngSwitchCase="'Nicolas'">I am Nicolas
+          
+        </p>
+        
+        <p *ngSwitchCase="'Andres'">I am Andres
+          <span class="sub-title">&#91; ngSwitch &#93; works</span>
+        </p>
+        <p *ngSwitchCase="'Juan'">I am Juan
+          <span class="sub-title">&#91; ngSwitch &#93; works</span>
+        </p>
+        <p *ngSwitchCase="'Camilo'">I am Camilo
+          <span class="sub-title">&#91; ngSwitch &#93; works</span>
+        </p>
+    </div>
+
+    @switch (person().name) {
+      @case('Nicolas'){
+        <p>Soy Nicolas
+          <span class="sub-title">&#64;switch  works</span>
+        </p>
+        
+      }
+      @case('Andres'){
+        <p>Soy Andres
+          <span class="sub-title">&#64;switch  works</span>
+        </p>
+        
+      }
+      @case('Juan'){
+        <p>Soy Juan
+          <span class="sub-title">&#64;switch  works</span>
+        </p>
+      }@default{
+        <p>Yo soy nadie</p>
+      }
+    }
 </div>

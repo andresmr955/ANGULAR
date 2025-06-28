@@ -99,5 +99,30 @@ export class Gettingreadyapp {
   changeFilter(filter: 'all' | 'pending' | 'completed') {
     this.filter.set(filter);
   }
+
+  name = "andres"
+  age = 8
+  tasks1 = signal<string[]>(
+      [
+        'Instalar Angular', 
+        'Create proyect',
+        'Create component',
+        'create service'
+      ]
+    );
+
+    person = signal ({
+      name: "Andres", 
+      age: 50
+    });
+     changeName(event:Event){
+      const input = event.target as HTMLInputElement;
+      const newValue = input.value;
+      this.person.update(prevState => {
+        return {
+          ...prevState, 
+          name: newValue
+        }
+      })}
 }
   

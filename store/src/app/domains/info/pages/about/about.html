@@ -1,12 +1,22 @@
-<p>about works!</p>
-<P>
-    <input type="number" [value]="duration()" (change)="changeDuration($event)">
-</P>
-<P>
-    <input type="text" [value]="message()" (change)="changeMessage($event)">
-</P>
-<P>
-    <app-counter [duration]="duration()" [message]="message()" *ngIf="duration() > 999">
+
+<div class="px-10">
+    <p>about works!</p>
+    <P>
+        <input class="pl-10 pr-4 py-2  border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" type="number" [value]="duration()" (change)="changeDuration($event)">
+    </P>
+    <P>
+        <input class="pl-10 pr-4 py-2  border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" type="text" [value]="message()" (change)="changeMessage($event)">
+    </P>
+    <h1 class="text-lg font-bold">About</h1>
+    <p class="text-xs">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae dignissimos illo minus repudiandae harum non alias, dolorum excepturi! Tempore animi error minima nihil! Dolore facere sapiente doloribus excepturi quam dolores.</p>
+    <P>
+    Numero de clientes: 
+    <app-counter [duration]="duration()" [message]="message()" *ngIf="duration() > 0">
 
     </app-counter>
-</P>
+    </P>
+        
+    <div>
+        <app-wave-audio audioUrl="assets/audio.mp3"></app-wave-audio>
+    </div>
+</div>

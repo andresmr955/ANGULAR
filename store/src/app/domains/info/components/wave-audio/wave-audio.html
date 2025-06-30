@@ -1,6 +1,14 @@
-<p>wave-audio works!</p>
 <div>
+    <p>wave-audio works!</p>
     <div #wave>
-
+        <button (click)="playingPause()">
+            @if(isPlaying()){
+                <span>▶️ Play</span>
+            }@else {
+                <span>⏸️ Pause</span>
+            }
+            
+            
+        </button>
     </div>
 </div>

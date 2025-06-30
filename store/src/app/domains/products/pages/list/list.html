@@ -1,9 +1,10 @@
-<h1>Lista de productos</h1>
-<div class="grid grid-cols-3">
-    <app-product title='Product 1' [price]="12"  image="https://picsum.photos/640/640?r" ></app-product>
-    <app-product image="https://picsum.photos/640/640?r"></app-product>
-    <app-product image="https://picsum.photos/640/640?r"></app-product>
-    <app-product image="https://picsum.photos/640/640?r"></app-product>
-    <app-product image="https://picsum.photos/640/640?r"></app-product>
-    <app-product image="https://picsum.photos/640/640?r"></app-product>
+  <h1 class="text-3xl font-bold mb-6 text-gray-800">Lista de productos</h1>
+
+<div class="grid grid-cols-3 gap-8">
+    <app-product title='Product 1' [price]="12"  image="https://picsum.photos/640/640?r28" (addToCart)="fromChild($event)" ></app-product>
+    <app-product  title='Product 2' image="https://picsum.photos/640/640?r23" (addToCart)="fromChild($event)"  [test]="test" ></app-product>
+    <app-product  title='Product 3' image="https://picsum.photos/640/640?r24" (addToCart)="fromChild($event)"> </app-product>
+    <app-product  title='Product 4' image="https://picsum.photos/640/640?r25" (addToCart)="fromChild($event)"> </app-product>
+    <app-product  title='Product 5' image="https://picsum.photos/640/640?r26" (addToCart)="fromChild($event)"> </app-product>
+    <app-product  title='Product 6' image="https://picsum.photos/640/640?r27" (addToCart)="fromChild($event)"> </app-product>
 </div>

@@ -1,8 +1,8 @@
-import { Component, Input } from '@angular/core';
-
+import { Component, Input, Output, EventEmitter} from '@angular/core';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-product',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './product.html',
   styleUrl: './product.css'
 })
@@ -11,5 +11,12 @@ export class Product {
   @Input({required: true}) image: string = "";
   @Input() price: number = 0;
   @Input() title: string = "";
+  @Input() test: string = "";
 
+  @Output() addToCart = new EventEmitter()
+
+  addToCartHandler(){
+    console.log('click from child')
+    this.addToCart.emit('Hello this is my msg output  =>  ' + this.title)
+  }
 }

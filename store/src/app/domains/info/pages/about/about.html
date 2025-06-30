@@ -1,0 +1,12 @@
+<p>about works!</p>
+<P>
+    <input type="number" [value]="duration()" (change)="changeDuration($event)">
+</P>
+<P>
+    <input type="text" [value]="message()" (change)="changeMessage($event)">
+</P>
+<P>
+    <app-counter [duration]="duration()" [message]="message()" *ngIf="duration() > 1000">
+
+    </app-counter>
+</P>

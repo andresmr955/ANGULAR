@@ -7,5 +7,10 @@ import { Product } from './../../components/product/product';
   styleUrl: './list.css'
 })
 export class List {
-
+  test = "Ana"
+  
+  fromChild(event: string){
+    console.log("We are in the parent")
+    console.log(event)
+  }
 }

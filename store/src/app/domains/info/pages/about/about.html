@@ -6,7 +6,7 @@
     <input type="text" [value]="message()" (change)="changeMessage($event)">
 </P>
 <P>
-    <app-counter [duration]="duration()" [message]="message()" *ngIf="duration() > 1000">
+    <app-counter [duration]="duration()" [message]="message()" *ngIf="duration() > 999">
 
     </app-counter>
 </P>

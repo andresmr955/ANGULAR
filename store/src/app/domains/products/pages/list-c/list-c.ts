@@ -2,17 +2,19 @@
 import { Component, signal } from '@angular/core';
 import { ProductModel } from './../../../shared/models/product.model';
 import { ProductC } from './../../../products/components/product-c/product-c';
+import { Header } from "../../../shared/components/header/header";
 
 
 @Component({
   selector: 'app-list-c',
-  imports: [ProductC],
+  imports: [ProductC, Header],
   templateUrl: './list-c.html',
   styleUrl: './list-c.css'
 })
 export class ListC {
   test = "Ana"
   productsc = signal<ProductModel[]>([]);
+  cart = signal<ProductModel[]>([]);
 
   constructor(){
     const initProducts: ProductModel[] = [
@@ -33,8 +35,11 @@ export class ListC {
     ]
     this.productsc.set(initProducts)
   }
-  fromChild(event: string){
-    console.log("We are in the parent")
-    console.log(event)
+  addToCart(product: ProductModel){
+    //event: Event
+    // console.log("We are in the parent")
+    // console.log(event)
+    
+    this.cart.update(prevState => [...prevState, product])
   }
 }

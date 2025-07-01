@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { Product } from './../../components/product/product';
+import { Header } from "../../../shared/components/header/header";
 @Component({
   selector: 'app-list',
-  imports: [Product],
+  imports: [Product, Header],
   templateUrl: './list.html',
   styleUrl: './list.css'
 })

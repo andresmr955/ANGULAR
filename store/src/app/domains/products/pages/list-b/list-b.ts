@@ -2,10 +2,11 @@ import { Component, signal } from '@angular/core';
 import { Productb } from './../../../products/components/product-b/productb';
 import { CommonModule } from '@angular/common';
 import { ProductModel } from './../../../shared/models/product.model';
+import { Header } from "../../../shared/components/header/header";
 
 @Component({
   selector: 'app-list-b',
-  imports: [Productb, CommonModule],
+  imports: [Productb, CommonModule,Header],
   templateUrl: './list-b.html',
   styleUrl: './list-b.css'
 })

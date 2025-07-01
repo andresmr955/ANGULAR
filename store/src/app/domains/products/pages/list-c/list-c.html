@@ -1,0 +1,14 @@
+<p>list-c works!</p>
+  <h1 class="text-3xl font-bold mb-6 text-gray-800">Lista de productos</h1>
+
+<div class="grid grid-cols-3 gap-8">
+      
+     @for( product of productsc(); track product; let i = $index) {
+               
+    <app-product-c 
+                [product]="product" 
+                (addToCart)="fromChild($event)" 
+                >
+    </app-product-c> }
+    
+</div>

@@ -14,4 +14,8 @@ export class Header {
   toggleSideMenu(){
     this.hideSideMenu.update(prevState => !prevState)
   }
+
+  get total(){
+    return this.cart.reduce((sum, item) => sum + item.price, 0)
+  }
 }

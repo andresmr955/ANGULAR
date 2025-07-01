@@ -1,8 +1,9 @@
 
-import { Component, signal } from '@angular/core';
+import { Component, signal, inject } from '@angular/core';
 import { ProductModel } from './../../../shared/models/product.model';
 import { ProductC } from './../../../products/components/product-c/product-c';
-import { Header } from "../../../shared/components/header/header";
+import { Header } from "../../../shared/components/header-c/header-c";
+import { Cart } from './../../../shared/services/cart';
 
 
 @Component({
@@ -14,8 +15,9 @@ import { Header } from "../../../shared/components/header/header";
 export class ListC {
   test = "Ana"
   productsc = signal<ProductModel[]>([]);
-  cart = signal<ProductModel[]>([]);
-
+  // cart = signal<ProductModel[]>([]);
+  private cartService = inject(Cart)
+  cart = this.cartService.cart;
   constructor(){
     const initProducts: ProductModel[] = [
       {
@@ -40,6 +42,7 @@ export class ListC {
     // console.log("We are in the parent")
     // console.log(event)
     
-    this.cart.update(prevState => [...prevState, product])
+    // this.cart.update(prevState => [...prevState, product])
+    this.cartService.addToCart(product)
   }
 }

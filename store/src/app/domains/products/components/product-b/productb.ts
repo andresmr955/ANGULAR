@@ -21,6 +21,16 @@ export class Productb {
 
   addToCartHandler(){
     console.log('click from child')
-    this.addToCart.emit('Hello this is my msg output  =>  ' + this.title)
+    // this.addToCart.emit('Hello this is my msg output  =>  ' + this.title)
+       const product: ProductModel = {
+      id: 1,
+      image: this.image,
+      price: this.price,
+      title: this.title,
+      creationAt: this.creationAt,
+    };
+
+    this.addToCart.emit(product);
+  
   }
 }

@@ -13,6 +13,7 @@ import { Header } from "../../../shared/components/header/header";
 export class ListB {
   test = "Ana"
   productsb = signal<ProductModel[]>([]);
+  cart = signal<ProductModel[]>([]);
 
   constructor(){
     const initProducts: ProductModel[] = [
@@ -33,8 +34,11 @@ export class ListB {
     ]
     this.productsb.set(initProducts)
   }
-  fromChild(event: string){
-    console.log("We are in the parent")
-    console.log(event)
+  addToCart(product: ProductModel){
+    //event: Event
+    // console.log("We are in the parent")
+    // console.log(event)
+    
+    this.cart.update(prevState => [...prevState, product])
   }
 }

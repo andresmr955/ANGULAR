@@ -20,7 +20,7 @@ export class Home {
     },
     {
       id: Date.now(),
-      title: "Crete component",
+      title: "Create component",
       completed: true,
     }
   ]);

@@ -16,13 +16,13 @@ export class TimeAgoPipe implements PipeTransform {
     const days = Math.floor(hours / 24);
 
     if (seconds < 60) {
-      return 'Actualizado hace unos segundos';
+      return 'Updated a few seconds ago';
     } else if (minutes < 60) {
-      return `Actualizado hace ${minutes} min`;
+      return `Updated ${minutes} min ago`;
     } else if (hours < 24) {
-      return `Actualizado hace ${hours} hora(s)`;
+      return `Updated ${hours} hour(s) ago`;
     } else {
-      return `Actualizado hace ${days} día(s)`;
+      return `Updated ${days} days(s) ago`;
     }
   }
 

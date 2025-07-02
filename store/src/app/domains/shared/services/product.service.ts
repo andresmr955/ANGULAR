@@ -10,8 +10,8 @@ export class Product {
   constructor() { }
 
   getProducts(){
-    // return this.http.get<ProductModel[]>('https://fakestoreapi.com/products')
-    return this.http.get<ProductModel[]>('https://api.escuelajs.co/api/v1/products')
+    return this.http.get<ProductModel[]>('https://fakestoreapi.com/products')
+    // return this.http.get<ProductModel[]>('https://api.escuelajs.co/api/v1/products')
 
     
   }

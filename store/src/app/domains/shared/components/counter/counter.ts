@@ -1,7 +1,7 @@
 import { Component, SimpleChanges, Input, signal} from '@angular/core';
 import { interval, Subscription } from 'rxjs';
 
-import { Product } from "../../../products/components/product/product";
+import { Product } from "@products/components/product/product";
 
 @Component({
   selector: 'app-counter',

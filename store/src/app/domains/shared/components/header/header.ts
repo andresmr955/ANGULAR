@@ -1,5 +1,5 @@
 import { Component, signal, Input, SimpleChanges } from '@angular/core';
-import { ProductModel } from './../../../shared/models/product.model';
+import { ProductModel } from '@shared/models/product.model';
 
 @Component({
   selector: 'app-header',

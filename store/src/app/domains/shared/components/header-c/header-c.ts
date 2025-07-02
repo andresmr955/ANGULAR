@@ -1,6 +1,6 @@
 import { Component, signal, Input, SimpleChanges, inject} from '@angular/core';
-import { ProductModel } from './../../../shared/models/product.model';
-import { Cart } from './../../services/cart';
+import { ProductModel } from '@shared/models/product.model';
+import { Cart } from '@services/cart';
 @Component({
   selector: 'app-header-c',
   imports: [],

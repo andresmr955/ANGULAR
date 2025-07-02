@@ -1,8 +1,8 @@
 import { Component, signal } from '@angular/core';
-import { Productb } from './../../../products/components/product-b/productb';
+import { Productb } from '@products/components/product-b/productb';
 import { CommonModule } from '@angular/common';
-import { ProductModel } from './../../../shared/models/product.model';
-import { Header } from "../../../shared/components/header/header";
+import { ProductModel } from "@shared/models/product.model";
+import { Header } from "@shared/components/header/header";
 
 @Component({
   selector: 'app-list-b',

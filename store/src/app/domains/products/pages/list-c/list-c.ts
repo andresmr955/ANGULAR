@@ -1,10 +1,10 @@
 
 import { Component, signal, inject } from '@angular/core';
-import { ProductModel } from './../../../shared/models/product.model';
-import { ProductC } from './../../../products/components/product-c/product-c';
-import { Header } from "../../../shared/components/header-c/header-c";
-import { Cart } from './../../../shared/services/cart';
-import { Product } from './../../../shared/services/product.service';
+import { ProductC } from '@products/components/product-c/product-c';
+import { ProductModel } from '@shared/models/product.model';
+import { Header } from "@shared/components/header-c/header-c";
+import { Cart } from '@shared/services/cart';
+import { Product } from '@shared/services/product.service';
 
 @Component({
   selector: 'app-list-c',

@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core';
-import { Product } from './../../components/product/product';
-import { Header } from "../../../shared/components/header/header";
-import { ProductModel } from './../../../shared/models/product.model';
+import { Product } from '@products/components/product/product';
+import { Header } from "@shared/components/header/header";
+import { ProductModel } from '@shared/models/product.model';
 @Component({
   selector: 'app-list',
   imports: [Product, Header],

@@ -6,7 +6,7 @@ import { Highlight } from "@shared/directives/highlight";
 import { Header } from '@shared/components/header-c/header-c';
 @Component({
   selector: 'app-about',
-  imports: [CommonModule, Counter, WaveAudio, Highlight, Header],
+  imports: [CommonModule, Counter, WaveAudio, Highlight],
   templateUrl: './about.html',
   styleUrl: './about.css'
 })

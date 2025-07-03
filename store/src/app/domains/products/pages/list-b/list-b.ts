@@ -10,7 +10,7 @@ import { Header } from "@shared/components/header/header";
   templateUrl: './list-b.html',
   styleUrl: './list-b.css'
 })
-export class ListB {
+export default class ListB {
   test = "Ana"
   productsb = signal<ProductModel[]>([]);
   cart = signal<ProductModel[]>([]);

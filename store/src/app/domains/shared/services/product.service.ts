@@ -9,9 +9,14 @@ export class Product {
   private http = inject(HttpClient)
   constructor() { }
 
-  getProducts(){
+  getProducts(category_id?: string){
+    const url = new URL(`https://api.escuelajs.co/api/v1/products`);
+    if (category_id){
+      url.searchParams.set('categoryId', category_id )
+    }
     //return this.http.get<ProductModel[]>('https://fakestoreapi.com/products')
-    return this.http.get<ProductModel[]>(`https://api.escuelajs.co/api/v1/products`)
+    //return this.http.get<ProductModel[]>(`https://api.escuelajs.co/api/v1/products`)
+    return this.http.get<ProductModel[]>(url.toString());
 
   }
   getOne(id:string){

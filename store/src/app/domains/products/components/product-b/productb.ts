@@ -28,6 +28,7 @@ export class Productb {
       price: this.price,
       title: this.title,
       creationAt: this.creationAt,
+      description: '',     
     };
 
     this.addToCart.emit(product);

@@ -5,7 +5,7 @@ import { ListC } from './domains/products/pages/list-c/list-c';
 import { About } from './domains/info/pages/about/about';
 import { NotFound } from '@info/pages/not-found/not-found';
 import { Layout } from '@shared/components/layout/layout';
-
+import { ProductDetail } from './domains/products/pages/product-detail/product-detail';
 export const routes: Routes = [
     
     {
@@ -27,6 +27,10 @@ export const routes: Routes = [
             {
                 path: 'about',
                 component: About,
+            },
+            {
+                path: 'product/:id',
+                component: ProductDetail,
             },
                 ]
     },

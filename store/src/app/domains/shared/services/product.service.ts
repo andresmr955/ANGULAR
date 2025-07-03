@@ -11,11 +11,12 @@ export class Product {
 
   getProducts(){
     //return this.http.get<ProductModel[]>('https://fakestoreapi.com/products')
-     return this.http.get<ProductModel[]>(`https://api.escuelajs.co/api/v1/products`)
+    return this.http.get<ProductModel[]>(`https://api.escuelajs.co/api/v1/products`)
 
   }
   getOne(id:string){
     return this.http.get<ProductModel>(`https://api.escuelajs.co/api/v1/products/${id}`)
+    //return this.http.get<ProductModel>(`https://fakestoreapi.com/products/${id}`)
   }
   
 }

@@ -23,15 +23,17 @@ export class ListB {
         price: 100,
         image: 'https://picsum.photos/640/640?r24',
         creationAt: new Date().toISOString(),
-        description: '',     
+        description: '',   
+        category: { id: 0, name: '', image: '' },  
       },
-       {
-        id: Date.now(),
+      {
+        id: Date.now() + 1,
         title: 'pro 1',
         price: 100,
         image: 'https://picsum.photos/640/640?r22',
         creationAt: new Date().toISOString(),
-        description: '',               
+        description: '', 
+        category: { id: 0, name: '', image: '' },                
       }
     ]
     this.productsb.set(initProducts)

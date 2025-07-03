@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductModel } from '@shared/models/product.model';
+import { Category } from '@shared/models/category.model';
 
 @Component({
   selector: 'app-productb',
@@ -15,7 +16,11 @@ export class Productb {
   @Input({required: true}) price: number = 0;
   @Input({required: true}) title: string = "";
   @Input({required: true}) creationAt: string = "";
-
+  @Input() category: Category = {
+    id: 0,
+    name: '',
+    image: ''
+  };
 
   @Output() addToCart = new EventEmitter()
 
@@ -29,6 +34,7 @@ export class Productb {
       title: this.title,
       creationAt: this.creationAt,
       description: '',     
+      category: this.category,
     };
 
     this.addToCart.emit(product);

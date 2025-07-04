@@ -3,9 +3,9 @@
   
   
   <label>Input Image:
-  <input type="text" [(ngModel)]="imgInput" name="Inputimage">
+    <input type="text" [(ngModel)]="imgInput" name="Inputimage">
   </label>
   <br>
   <app-img (loaded)="onLoaded($event)" [imgInput]="imgInput" ></app-img>
-
+  <app-product [product]="product" *ngFor="let product of products"></app-product>
 </router-outlet>

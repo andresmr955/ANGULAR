@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductModel } from '../../models/product.model';
 import { Product } from './../product/product';
-import { reduce } from 'rxjs';
+//import { reduce } from 'rxjs';
 import { ApiProducts } from './../../services/api-products/api-products';
 import { Store } from '../../services/store';
 

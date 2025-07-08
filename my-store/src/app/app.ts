@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { Product } from './components/product/product';
-import { Img } from './components/img/img'
+// import { Product } from './components/product/product';
+// import { Img } from './components/img/img'
 import { Nav } from './components/nav/nav';
 import { FormsModule } from '@angular/forms';
-import { ProductModel } from './models/product.model';
+// import { ProductModel } from './models/product.model';
 import { ListProducts } from './../app/components/list-products/list-products'
 
 @Component({

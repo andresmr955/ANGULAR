@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ProductModel } from './../../models/product.model';
 import { Store } from './../../services/store';
-import { subscribe } from 'diagnostics_channel';
+
 
 
 @Component({

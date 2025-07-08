@@ -4,7 +4,9 @@
   <div class="p-4 flex flex-col flex-grow justify-between ">
     <div>
       <h2 class="text-lg font-semibold text-gray-800 mb-1 line-clamp-2">{{ product.title }}</h2>
-      <p class="text-xl font-bold text-green-600">${{ product.price }}</p>
+      <p class="text-xl font-bold text-green-600">{{ product.price | currency }} </p>
+      <p class="text-xl font-bold">{{ today | date:'short' }}</p>
+
     </div>
     
     <button

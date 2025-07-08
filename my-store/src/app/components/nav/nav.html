@@ -32,11 +32,11 @@
     <div class="flex items-center space-x-4">
             <img 
             [src]="product.image" 
-            [alt]="product.name"
+            [alt]="product.title"
             class="w-16 h-16 object-cover rounded">
             
             <div class="flex-1">
-                <div class="font-medium text-gray-800">{{product.name}}</div>
+                <div class="font-medium text-gray-800">{{product.title}}</div>
                 <div class="text-gray-500">{{product.price}}</div>
             </div>
             <button class="text-red-500 hover:text-red-700 font-semibold">Delete</button>

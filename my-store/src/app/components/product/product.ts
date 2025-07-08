@@ -13,6 +13,9 @@ export class Product {
   
   @Output() addedProduct = new EventEmitter<ProductModel>();
 
+  today = new Date();
+  date = new Date(2021,1,21);
+  
   onAddToCart(){
     this.addedProduct.emit(this.product)
   }

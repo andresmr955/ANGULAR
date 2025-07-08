@@ -1,6 +1,10 @@
 
-<img (load)="imgLoaded()" (error)="imgError()" [src]="imgInput" alt="" *ngIf="imgInput; else elseImage">
-<!-- <h3>{{ counter }}</h3> -->
-<ng-template #elseImage>
-    <img width="200px" [src]="imgDefault" alt="" >
-</ng-template>
+
+
+<div class="w-full h-48 flex justify-center items-center overflow-hidden bg-gray-100">
+  <img (load)="imgLoaded()" (error)="imgError()" [src]="imgInput" alt="" *ngIf="imgInput; else elseImage">
+    <!-- <h3>{{ counter }}</h3> -->
+    <ng-template #elseImage>
+        <img width="200px" [src]="imgDefault" alt="" >
+    </ng-template>
+</div>

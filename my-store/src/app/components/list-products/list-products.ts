@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ProductModel } from '../../models/product.model';
 import { Product } from './../product/product';
 import { reduce } from 'rxjs';
-
+import { ApiProducts } from './../../services/api-products/api-products';
 import { Store } from '../../services/store';
 
 @Component({
@@ -16,24 +16,32 @@ export class ListProducts {
   myShoppingCart: ProductModel [] = [];
 
   constructor(
-    private storeService: Store
+    private storeService: Store,
+    private apiProducts: ApiProducts
   ){
     this.myShoppingCart = this.storeService.getShoppingCart();
   }
 
-  products: ProductModel[] = [
-  { id: '1', name: 'Product 1', price: 15.99, image: 'https://picsum.photos/200' },
-  { id: '2', name: 'Product 2', price: 12.49, image: 'https://picsum.photos/200' },
-  { id: '3', name: 'Product 3', price: 19.99, image: 'https://picsum.photos/200' },
-  { id: '4', name: 'Product 4', price: 9.99,  image: 'https://picsum.photos/200' },
-  { id: '5', name: 'Product 5', price: 14.00, image: 'https://picsum.photos/200' },
-  { id: '6', name: 'Product 6', price: 22.25, image: 'https://picsum.photos/200' },
-  { id: '7', name: 'Product 7', price: 17.75, image: 'https://picsum.photos/200' },
-  { id: '8', name: 'Product 8', price: 8.50,  image: 'https://picsum.photos/200' },
-  { id: '9', name: 'Product 9', price: 11.30, image: 'https://picsum.photos/200' },
-  { id: '10', name: 'Product 10', price: 20.99, image: 'https://picsum.photos/200'},
+  ngOnInit(): void {
+    this.apiProducts.getAllProducts()
+    .subscribe(data => {
+      this.products = data
+    });
+  }
+  products: ProductModel[] = [];
+  // products: ProductModel[] = [
+  // { id: '1', name: 'Product 1', price: 15.99, image: 'https://picsum.photos/200' },
+  // { id: '2', name: 'Product 2', price: 12.49, image: 'https://picsum.photos/200' },
+  // { id: '3', name: 'Product 3', price: 19.99, image: 'https://picsum.photos/200' },
+  // { id: '4', name: 'Product 4', price: 9.99,  image: 'https://picsum.photos/200' },
+  // { id: '5', name: 'Product 5', price: 14.00, image: 'https://picsum.photos/200' },
+  // { id: '6', name: 'Product 6', price: 22.25, image: 'https://picsum.photos/200' },
+  // { id: '7', name: 'Product 7', price: 17.75, image: 'https://picsum.photos/200' },
+  // { id: '8', name: 'Product 8', price: 8.50,  image: 'https://picsum.photos/200' },
+  // { id: '9', name: 'Product 9', price: 11.30, image: 'https://picsum.photos/200' },
+  // { id: '10', name: 'Product 10', price: 20.99, image: 'https://picsum.photos/200'},
 
-  ]
+  // ]
 
   onAddToShoppingCart(product: ProductModel){
       

@@ -10,6 +10,10 @@
         </a>
          <button (click)="toggleShoppingCart()">
             <img src="./assets/svg/icon_shopping_cart.svg" alt="">
+            <span class="counter
+                counter absolute top-3 right-4 -translate-y-1/2 translate-x-1/2 bg-green-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center
+                "
+                >{{ counter }}</span>
         </button>
     </div>
 </div>
@@ -75,9 +79,14 @@
         <div class="info">
             <div class="account">andresmr955&#64;gmail.com</div>
             <div>
-                <a href="">
-                    <img src="./assets/svg/logo_yard_sale.svg" alt="">
-                </a>
+                <button (click)="toggleShoppingCart()" >
+                    <img src="./assets/svg/icon_shopping_cart.svg" alt="">
+                </button>
+                
+            <span class="counter
+                counter absolute top-3 right-4 -translate-y-1/2 translate-x-1/2 bg-green-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center
+                "
+                >{{ counter }}</span>
             </div>
         </div>
     </div>

@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { ProductModel } from './../../models/product.model';
 import { Store } from './../../services/store';
+import { subscribe } from 'diagnostics_channel';
+
+
 @Component({
   selector: 'app-nav',
   imports: [],
@@ -10,6 +13,7 @@ import { Store } from './../../services/store';
 export class Nav {
   activeMenu = false;
   activeShoppingCart = false;
+  counter = 0
 
   myShoppingCart: ProductModel [] = [];
   
@@ -19,6 +23,11 @@ export class Nav {
     this.myShoppingCart = this.storeService.getShoppingCart();
   }
 
+  ngOnInit(){
+    this.storeService.myCart$.subscribe(products => {
+      this.counter = products.length;
+    })
+  }
   toggleMenu(){
     this.activeMenu = !this.activeMenu;
   }

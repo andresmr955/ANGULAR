@@ -12,7 +12,7 @@ export class ApiProducts {
   constructor(
 
       private http: HttpClient
-
+      
   ) { }
   getAllProducts(){
     return this.http.get<ProductModel[]>(this.apiUrl);

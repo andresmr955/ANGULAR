@@ -1,5 +1,7 @@
 <br>
 <h4>Here stars the list of products</h4>
-<img [src]="product.image" alt="">
+<app-img [imgInput]="product.image"></app-img>
+<!-- <img [src]="product.image" alt=""> -->
 <h2> {{ product.name }} </h2>
 <p> {{ product.price }} </p>
+<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" (click)="onAddToCart()">Add cart</button>

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-img',
@@ -9,7 +9,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrl: './img.css'
 })
 export class Img {
-
+  private  counterFn: number | undefined;
+  
   constructor(){
     //before render 
     //NO async -- once time
@@ -17,16 +18,21 @@ export class Img {
 
   }
 
-  ngOnChanges(){
+  ngOnChanges(changes: SimpleChanges){
     //before render
     //changes inputs --times
     console.log('ngOnChanges', 'ImagValue =>', this.imgInput)
-
+    console.log(changes)
   }
   ngOnInit(){
     //before render
     // async - fetch --once time
     console.log('ngOnInit', 'ImagValue =>', this.imgInput)
+
+    // this.counterFn = window.setInterval(() => {
+    //   this.counter += 1;
+    //   console.log('run counter');
+    // }, 1000);
 
   }
   ngAfterViewInit(){
@@ -36,15 +42,26 @@ export class Img {
   }
   ngOnDestroy(){
     //delete
-    console.log('ngAfterViewInit','ImagValue =>', this.imgInput)
+    console.log('ngOnDestroy','ImagValue =>', this.imgInput)
+    clearInterval(this.counterFn)
   }
-  @Input() imgInput: string = "";
+
+  imgInput: string = '';
+
+  @Input('imgInput')
+  set changeImg(newImage: string){
+    this.imgInput = newImage
+    console.log('change just image', this.imgInput);
+  }
+  //@Input() imgInput: string = "";
   @Output() loaded = new EventEmitter<string>();
 
   imgDefault = "assets/default.png";
   imgErrors= "assets/any.png";
 
   
+  // counter = 0;
+ 
 
   imgError(){
     this.imgInput = this.imgErrors

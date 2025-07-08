@@ -1,11 +1,14 @@
 
+<app-nav></app-nav>
 <router-outlet>
-  
-  
-  <label>Input Image:
-    <input type="text" [(ngModel)]="imgInput" name="Inputimage">
-  </label>
-  <br>
-  <app-img (loaded)="onLoaded($event)" [imgInput]="imgInput" ></app-img>
-  <app-product [product]="product" *ngFor="let product of products"></app-product>
+      <app-list-products></app-list-products>
+      
+      <!-- <label>Input Image:
+        <input type="text" [(ngModel)]="imgInput" name="Inputimage">
+      </label>
+      <button (click)="toggleImag()">toggle Imag</button>
+      <p>{{ showImg }}</p>
+      <br>
+      <app-img *ngIf="showImg" (loaded)="onLoaded($event)" [imgInput]="imgInput" ></app-img>
+      -->
 </router-outlet>
